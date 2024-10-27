@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendation System</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input[type="text"] {
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            outline: none;
+            font-size: 1.2em;
+            width: 300px;
+            box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+            transition: box-shadow 0.3s ease;
+            background-color: #333;
+            color: white;
+        }
+        input[type="text"]:focus {
+            box-shadow: 0 0 15px rgba(0, 0, 255, 1);
+        }
+        input[type="submit"] {
+            margin-top: 15px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            background-color: blue;
+            color: white;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: darkblue;
+        }
+        h2 {
+            font-size: 2em;
+            margin-top: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Movie Recommendation System</h1>
+    <form method="POST">
+        <label for="title">Enter Movie Title:</label>
+        <input type="text" id="title" name="title" placeholder="e.g., Avatar" required>
+        <input type="submit" value="Get Recommendations">
+    </form>
+    
+    {% if recommendations %}
+        <h2>Recommendations:</h2>
+        <ul>
+        {% for rec in recommendations %}
+            <li>{{ rec }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
