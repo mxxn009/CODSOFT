@@ -13,12 +13,12 @@ def compute_face_encoding(face_image):
     return np.random.rand(128)
 
 def load_and_encode_known_faces():
-    image1 = cv2.imread("C:/Users/Diwakar/OneDrive - MSFT/Pictures/jeemain p1 - Copy.jpg")
+    image1 = cv2.imread("Your/image/path")
     encoding1 = compute_face_encoding(image1)
     known_face_encodings.append(encoding1)
     known_face_names.append("Person 1")
 
-    image2 = cv2.imread("C:/Users/Diwakar/OneDrive - MSFT/Pictures/IMG_7592.JPG")
+    image2 = cv2.imread("your/image/path")
     encoding2 = compute_face_encoding(image2)
     known_face_encodings.append(encoding2)
     known_face_names.append("Person 2")
