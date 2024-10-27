@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 from recommendations import RecommendationSystem
 
 app = Flask(__name__)
-recommender = RecommendationSystem('C:/Users/Diwakar/Downloads/python/python programs/CodSoft/recommendation/data.csv')
+recommender = RecommendationSystem('dataset/path')
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
